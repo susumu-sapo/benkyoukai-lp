@@ -94,6 +94,30 @@ h2{font-size:clamp(24px,5.8vw,36px);font-weight:900;line-height:1.5;text-align:c
 .proof img{border-radius:14px;box-shadow:0 6px 18px rgba(20,26,46,.1)}
 .proof figcaption{font-size:12px;font-weight:700;text-align:center;margin-top:8px}
 
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+.diff div{padding:22px 16px;border-radius:20px;text-align:center}
+.diff .old{background:#f1f2f6;color:var(--sub)}
+.diff .new{background:#fff;border:3px solid var(--pink);box-shadow:0 10px 30px rgba(255,77,141,.18);position:relative}
+.diff .new:before{content:"今回だけ";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-size:12px;font-weight:900;padding:2px 12px;border-radius:99px;white-space:nowrap}
+.diff small{display:block;font-size:12px;font-weight:700;margin-bottom:6px}
+.diff p{margin:0;font-weight:900;font-size:16px;line-height:1.6}
+.diff .new p{color:var(--ink)}
+.ev-grid{display:grid;gap:16px}
+.ev{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(20,26,46,.08)}
+.ev-body{padding:16px 18px 18px}
+.ev-row{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}
+.ev-row span{flex:none;font-family:Inter,sans-serif;font-size:11px;font-weight:900;padding:2px 10px;border-radius:99px;background:#eef0f6;color:var(--sub)}
+.ev-row.a span{background:var(--pink);color:#fff}
+.ev-row.a{font-size:19px;font-weight:900;color:var(--pink)}
+.ev-arrow{color:#c3c8d8;font-size:12px;margin:4px 0 4px 18px}
+.ev-meta{margin:10px 0 0;font-size:12px;color:var(--sub)}
+.faq{background:#fff;border-radius:16px;margin-bottom:12px;border:2px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 48px 18px 20px;font-weight:900;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:before{content:"Q";color:var(--blue);font-family:Inter,sans-serif;margin-right:10px}
+.faq summary:after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--blue)}
+.faq[open] summary:after{content:"−"}
+.faq .a{padding:0 20px 18px;color:var(--sub);font-size:15px}
 .final{text-align:center;padding:96px 0 140px;background:linear-gradient(180deg,#fff,#eef2ff)}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:50;transform:translateY(110%);transition:transform .3s;text-align:center}
 .sticky.on{transform:none}
@@ -109,19 +133,30 @@ footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
 
 <header class="hero">
   <div class="wall" aria-hidden="true">
-    <div class="row"><img src="img/design-05.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-10.jpg" alt=""><img src="img/design-05.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-10.jpg" alt=""></div>
-    <div class="row r2"><img src="img/ai-03.jpg" alt=""><img src="img/design-06.jpg" alt=""><img src="img/ai-11.jpg" alt=""><img src="img/design-15.jpg" alt=""><img src="img/ai-07.jpg" alt=""><img src="img/design-07.jpg" alt=""><img src="img/ai-03.jpg" alt=""><img src="img/design-06.jpg" alt=""><img src="img/ai-11.jpg" alt=""><img src="img/design-15.jpg" alt=""><img src="img/ai-07.jpg" alt=""><img src="img/design-07.jpg" alt=""></div>
-    <div class="row"><img src="img/ai-09.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-05.jpg" alt=""><img src="img/ai-09.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-05.jpg" alt=""></div>
+    <div class="row"><img src="img/s/design-05.jpg" alt=""><img src="img/s/ai-04.jpg" alt=""><img src="img/s/design-16.jpg" alt=""><img src="img/s/ai-01.jpg" alt=""><img src="img/s/design-08.jpg" alt=""><img src="img/s/ai-10.jpg" alt=""><img src="img/s/design-05.jpg" alt=""><img src="img/s/ai-04.jpg" alt=""><img src="img/s/design-16.jpg" alt=""><img src="img/s/ai-01.jpg" alt=""><img src="img/s/design-08.jpg" alt=""><img src="img/s/ai-10.jpg" alt=""></div>
+    <div class="row r2"><img src="img/s/ai-03.jpg" alt=""><img src="img/s/design-06.jpg" alt=""><img src="img/s/ai-11.jpg" alt=""><img src="img/s/design-15.jpg" alt=""><img src="img/s/ai-07.jpg" alt=""><img src="img/s/design-07.jpg" alt=""><img src="img/s/ai-03.jpg" alt=""><img src="img/s/design-06.jpg" alt=""><img src="img/s/ai-11.jpg" alt=""><img src="img/s/design-15.jpg" alt=""><img src="img/s/ai-07.jpg" alt=""><img src="img/s/design-07.jpg" alt=""></div>
+    <div class="row"><img src="img/s/ai-09.jpg" alt=""><img src="img/s/design-16.jpg" alt=""><img src="img/s/ai-04.jpg" alt=""><img src="img/s/design-08.jpg" alt=""><img src="img/s/ai-01.jpg" alt=""><img src="img/s/design-05.jpg" alt=""><img src="img/s/ai-09.jpg" alt=""><img src="img/s/design-16.jpg" alt=""><img src="img/s/ai-04.jpg" alt=""><img src="img/s/design-08.jpg" alt=""><img src="img/s/ai-01.jpg" alt=""><img src="img/s/design-05.jpg" alt=""></div>
   </div>
   <div class="wrap">
     <div class="pill">⚡ 今回だけの<b>ゲリラ開催</b>｜無料Zoom勉強会</div>
     <h1><span style="word-break: keep-all; overflow-wrap: anywhere;">AIで​作れても、<br>​それだけでは<br><span class="g">​1円にもならない。</span></span></h1>
     <p class="lead"><span style="word-break: keep-all; overflow-wrap: anywhere;">動画も、​画像も、​LPも。​AIで​「作れる」​時代に​なりました。<br>​でも、​仕事に​なるかは​「どう​稼ぐか」を​知っているか次第。</span></p>
     <p class="lead"><span style="word-break: keep-all; overflow-wrap: anywhere;"><strong>いつもの​勉強会とは​別に、​今回だけ​特別に。</strong><br>​「AIで​作れるを、​稼げるに​変える」を​テーマに​ゲリラ開催します。</span></p>
-    <a class="btn" href="#FORM_URL">無料で勉強会に参加する</a>
-    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">今回だけの​ゲリラ開催・無料ですが​人数限定です</span></p>
+    <a class="btn" href="#FORM_URL">今すぐ予約する</a>
+    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">受付は​48時間限定・定員に​なり次第終了します</span></p>
   </div>
 </header>
+
+<section class="soft">
+  <div class="wrap">
+    <p class="eyebrow">WHAT'S DIFFERENT</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">いつもの​勉強会と、<br><span class="mk">​何が​違う？</span></span></h2>
+    <div class="diff reveal">
+      <div class="old"><small>いつもの勉強会</small><p><span style="word-break: keep-all; overflow-wrap: anywhere;">AI×SNS副業の​全体像を​広く​学ぶ</span></p></div>
+      <div class="new"><small style="color:var(--pink)">今回のゲリラ勉強会</small><p><span style="word-break: keep-all; overflow-wrap: anywhere;">「稼ぎ方」だけに​絞って​深掘りする</span></p></div>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -167,6 +202,19 @@ footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
 </section>
 
 <section class="soft">
+  <div class="wrap">
+    <p class="eyebrow">RESULTS</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">実際に、<span class="g">​稼げるようになった</span><br>​受講生たち。</span></h2>
+    <div class="ev-grid">
+      <div class="ev reveal"><img src="img/student-04.webp" alt="受講生の成果" loading="lazy"><div class="ev-body"><div class="ev-row"><span>BEFORE</span>元手取り17万円</div><div class="ev-arrow">▼</div><div class="ev-row a"><span>AFTER</span>年収1,000万円超え</div><p class="ev-meta"><span style="word-break: keep-all; overflow-wrap: anywhere;">30代 男性／副業未経験／自己啓発系</span></p></div></div>
+      <div class="ev reveal"><img src="img/student-08.webp" alt="受講生の成果" loading="lazy"><div class="ev-body"><div class="ev-row"><span>BEFORE</span>運用代行を受注</div><div class="ev-arrow">▼</div><div class="ev-row a"><span>AFTER</span>売上80万円を達成</div><p class="ev-meta"><span style="word-break: keep-all; overflow-wrap: anywhere;">アパレル企業</span></p></div></div>
+      <div class="ev reveal"><img src="img/student-02.webp" alt="受講生の成果" loading="lazy"><div class="ev-body"><div class="ev-row"><span>BEFORE</span>コンテンツ販売をスタート</div><div class="ev-arrow">▼</div><div class="ev-row a"><span>AFTER</span>売上50万円を突破</div><p class="ev-meta"><span style="word-break: keep-all; overflow-wrap: anywhere;">30代 男性</span></p></div></div>
+      <div class="ev reveal"><img src="img/student-01.webp" alt="受講生の成果" loading="lazy"><div class="ev-body"><div class="ev-row"><span>BEFORE</span>アフィリエイトを開始</div><div class="ev-arrow">▼</div><div class="ev-row a"><span>AFTER</span>売上30万円を突破</div><p class="ev-meta"><span style="word-break: keep-all; overflow-wrap: anywhere;">20代 女性</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <p class="eyebrow">WHAT YOU LEARN</p>
     <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">勉強会で​わかる​こと</span></h2>
@@ -221,16 +269,26 @@ footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">よく​ある​質問</span></h2>
+    <details class="faq reveal"><summary>参加費は本当に無料ですか？</summary><div class="a">はい、無料です。</div></details>
+    <details class="faq reveal"><summary>AI初心者でも参加できますか？</summary><div class="a">はい、参加できます。</div></details>
+    <details class="faq reveal"><summary>スマホからでも参加できますか？</summary><div class="a">はい。Zoomアプリを入れていただければ、スマホからでも参加できます。</div></details>
+  </div>
+</section>
+
 <div class="final">
   <div class="wrap">
     <p class="pill"><span style="word-break: keep-all; overflow-wrap: anywhere;">⚡ 今回だけの<b>​ゲリラ開催</b></span></p>
     <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">「作れる」で​終わらせず、<br><span class="g">​「稼げる」に​変えませんか？</span></span></h2>
-    <a class="btn" href="#FORM_URL">無料で勉強会に参加する</a>
-    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">今回だけの​ゲリラ開催・無料ですが​人数限定です</span></p>
+    <a class="btn" href="#FORM_URL">今すぐ予約する</a>
+    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">受付は​48時間限定・定員に​なり次第終了します</span></p>
   </div>
 </div>
 
-<div class="sticky" id="sticky"><a class="btn" href="#FORM_URL">無料で勉強会に参加する</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#FORM_URL">今すぐ予約する</a></div>
 <footer>© AIスマートLab すすむ</footer>
 
 <script>
