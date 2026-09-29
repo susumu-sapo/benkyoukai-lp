@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>無料Zoom勉強会｜AIで作れるを、稼げるに変える</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070d;--ink:#fff;--sub:#a9a9bf;--line:rgba(255,255,255,.1);--grad:linear-gradient(120deg,#ff4d6d,#8b5cf6,#22d3ee)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.8;overflow-x:hidden}
+img{display:block;max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:80px 0 60px}
+.wall{position:absolute;inset:-10% -20%;display:flex;flex-direction:column;gap:14px;transform:rotate(-8deg);opacity:.75}
+.row{display:flex;gap:14px;width:max-content;animation:slide 60s linear infinite}
+.row.r2{animation-direction:reverse;animation-duration:75s}
+.row img{height:170px;width:auto;border-radius:12px}
+@keyframes slide{to{transform:translateX(-50%)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,13,.35) 0%,rgba(7,7,13,.75) 35%,rgba(7,7,13,.9) 70%,var(--bg) 100%)}
+.hero .wrap{position:relative;z-index:2;text-align:center}
+.pill{display:inline-block;font-size:13px;font-weight:700;padding:6px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);backdrop-filter:blur(6px);margin-bottom:24px}
+.pill b{color:#22d3ee}
+h1{font-size:clamp(28px,7vw,52px);font-weight:900;line-height:1.4;margin:0 0 20px}
+.lead{color:var(--sub);font-size:clamp(14px,3.6vw,18px);margin:0 auto 34px;max-width:540px}
+.btn{position:relative;display:inline-block;width:100%;max-width:420px;padding:20px 24px;border-radius:16px;background:var(--grad);color:#fff;font-weight:900;font-size:18px;text-decoration:none;box-shadow:0 10px 40px rgba(139,92,246,.45);transition:transform .2s;overflow:hidden}
+.btn:hover{transform:translateY(-2px)}
+.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35),transparent 70%);background-size:250% 100%;animation:shine 3s infinite}
+@keyframes shine{from{background-position:150% 0}to{background-position:-100% 0}}
+.limit{font-size:13px;color:var(--sub);margin-top:12px}
+.limit:before{content:"●";color:#ff4d6d;margin-right:6px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+section{padding:88px 0}
+section.t0{padding-top:0}
+.eyebrow{font-family:Inter,sans-serif;font-weight:900;font-size:13px;letter-spacing:.2em;text-align:center;margin:0 0 10px}
+h2{font-size:clamp(23px,5.6vw,36px);font-weight:900;line-height:1.5;text-align:center;margin:0 0 40px}
+.ba{display:grid;gap:18px}
+.ba figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#111;position:relative}
+.ba figcaption{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(0,0,0,.65);backdrop-filter:blur(4px)}
+.note{font-size:13px;color:var(--sub);text-align:center;margin-top:18px}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.works img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.works .big{grid-column:span 2;grid-row:span 2}
+.learn{display:grid;gap:14px;counter-reset:n}
+.card{padding:26px 24px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01));display:flex;gap:18px;align-items:flex-start}
+.card:before{counter-increment:n;content:"0" counter(n);font-family:Inter,sans-serif;font-weight:900;font-size:30px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card h3{margin:0 0 4px;font-size:18px}
+.card p{margin:0;color:var(--sub);font-size:14px}
+.road{display:grid;gap:14px}
+.step{padding:24px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);position:relative}
+.step b{font-family:Inter,sans-serif;font-size:12px;letter-spacing:.15em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{margin:4px 0;font-size:19px}.step p{margin:0;color:var(--sub);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-size:13px;padding:6px 12px;border-radius:99px;background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.4)}
+.for{display:grid;gap:12px}
+.q{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.q i{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;background:var(--grad)}
+.q p{margin:0;font-weight:700;font-size:15px;line-height:1.6}.q small{display:block;font-weight:400;color:var(--sub);font-size:13px}
+.teacher{display:flex;gap:24px;align-items:center;padding:28px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.teacher img{width:120px;height:120px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px #8b5cf6}
+.teacher h3{margin:0 0 6px;font-size:20px}
+.teacher p{margin:0;color:var(--sub);font-size:14px}
+.final{text-align:center;padding:100px 0 140px;position:relative;overflow:hidden}
+.final:before{content:"";position:absolute;left:50%;top:40%;width:600px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(139,92,246,.35),transparent 60%);pointer-events:none}
+.final .wrap{position:relative}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(7,7,13,.85);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:50;transform:translateY(110%);transition:transform .3s;text-align:center}
+.sticky.on{transform:none}
+.sticky .btn{padding:15px;font-size:16px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+footer{text-align:center;color:#555;font-size:12px;padding-bottom:100px}
+@media (max-width:560px){.row img{height:120px}.teacher{flex-direction:column;text-align:center}.works{grid-template-columns:repeat(2,1fr)}.works img:nth-child(6){display:none}.lead br.pc{display:none}}
+@media (prefers-reduced-motion:reduce){.row,.btn:after,.limit:before{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wall" aria-hidden="true">
+    <div class="row"><img src="img/design-05.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-10.jpg" alt=""><img src="img/design-05.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-10.jpg" alt=""></div>
+    <div class="row r2"><img src="img/ai-03.jpg" alt=""><img src="img/design-06.jpg" alt=""><img src="img/ai-11.jpg" alt=""><img src="img/design-15.jpg" alt=""><img src="img/ai-07.jpg" alt=""><img src="img/design-07.jpg" alt=""><img src="img/ai-03.jpg" alt=""><img src="img/design-06.jpg" alt=""><img src="img/ai-11.jpg" alt=""><img src="img/design-15.jpg" alt=""><img src="img/ai-07.jpg" alt=""><img src="img/design-07.jpg" alt=""></div>
+    <div class="row"><img src="img/ai-09.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-05.jpg" alt=""><img src="img/ai-09.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-05.jpg" alt=""></div>
+  </div>
+  <div class="wrap">
+    <div class="pill">⚡ 今回だけの <b>ゲリラ開催</b>｜無料Zoom勉強会</div>
+    <h1>AIで作れても、<br>それだけでは<br><span class="g">1円にもならない。</span></h1>
+    <p class="lead">動画も、画像も、LPも。AIで「作れる」時代になりました。<br>でも、仕事になるかどうかは「どう稼ぐか」を知っているか次第。<br><strong style="color:#fff">いつもの勉強会とは別に、今回だけ特別に</strong>、<br class="pc">「AIで作れるを、稼げるに変える」をテーマにゲリラ開催します。</p>
+    <a class="btn" href="#FORM_URL">無料で勉強会に参加する</a>
+    <p class="limit">今回だけのゲリラ開催・無料ですが人数限定で行います</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow g">BEFORE → AFTER</p>
+    <h2 class="reveal">ここまでは、<br>AIで誰でも作れるようになった。</h2>
+    <div class="ba">
+      <figure class="reveal"><img src="img/ai-04.jpg" alt="商品写真のBefore/After" loading="lazy"><figcaption>商品写真 → 広告ビジュアル</figcaption></figure>
+      <figure class="reveal"><img src="img/ai-09.jpg" alt="人物写真のBefore/After" loading="lazy"><figcaption>人物 → 広告モデル</figcaption></figure>
+      <figure class="reveal"><img src="img/ai-10.jpg" alt="料理写真のBefore/After" loading="lazy"><figcaption>料理写真 → 販促ビジュアル</figcaption></figure>
+    </div>
+    <p class="note">※左がBefore・右がAfter。すすむがAIで制作した実例です</p>
+  </div>
+</section>
+
+<section class="t0">
+  <div class="wrap">
+    <p class="eyebrow g">WORKS</p>
+    <h2 class="reveal">でも、作品が増えても<br>収入は増えない。</h2>
+    <div class="works reveal">
+      <img class="big" src="img/design-05.jpg" alt="" loading="lazy">
+      <img src="img/design-16.jpg" alt="" loading="lazy">
+      <img src="img/design-08.jpg" alt="" loading="lazy">
+      <img src="img/ai-01.jpg" alt="" loading="lazy">
+      <img src="img/design-15.jpg" alt="" loading="lazy">
+      <img src="img/design-06.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="t0">
+  <div class="wrap">
+    <p class="eyebrow g">MONETIZE</p>
+    <h2 class="reveal">作れる ≠ 稼げる。<br><span class="g">稼ぎ方は、5つある。</span></h2>
+    <div class="road">
+      <div class="step reveal"><b>01</b><h3>note・コンテンツ販売</h3><p>AIで作れるようになった知識や型を、商品として販売する</p></div>
+      <div class="step reveal"><b>02</b><h3>アフィリエイト</h3><p>自分が使って良かったAIツールやサービスを紹介して収益化</p></div>
+      <div class="step reveal"><b>03</b><h3>法人向けの動画・LP制作</h3><p>AIで作れる制作物を、企業向けのサービスとして提供する</p></div>
+      <div class="step reveal"><b>04</b><h3>自分の講座・コンサル</h3><p>「同じようにAIを学びたい人」に教える、自分のコンテンツをつくる</p></div>
+      <div class="step reveal"><b>05</b><h3>SNS・インフルエンサー</h3><p>AIを活用して発信を伸ばし、影響力そのものを収入に変える</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="t0">
+  <div class="wrap">
+    <p class="eyebrow g">WHAT YOU LEARN</p>
+    <h2 class="reveal">勉強会でわかること</h2>
+    <div class="learn">
+      <div class="card reveal"><div><h3>AIで稼ぐ5つの道の全体像</h3><p>それぞれ、何が必要で、どう収入になるのか</p></div></div>
+      <div class="card reveal"><div><h3>自分に合う稼ぎ方の選び方</h3><p>今のスキル・時間・目指す働き方から、最初に選ぶべき道</p></div></div>
+      <div class="card reveal"><div><h3>最初の1円までの流れ</h3><p>「作れる」を「稼げる」に変えるために、何から始めるか</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="t0">
+  <div class="wrap">
+    <p class="eyebrow g">FOR YOU</p>
+    <h2 class="reveal">こんな方におすすめ</h2>
+    <div class="for">
+      <div class="q reveal"><i>＋</i><p><small>AIツールは触ってみたけど、</small>まだお金になっていない</p></div>
+      <div class="q reveal"><i>✦</i><p><small>作れるようになったけど、</small>どう仕事にすればいいか分からない</p></div>
+      <div class="q reveal"><i>↗</i><p><small>会社の給料以外に、</small>収入の柱をもうひとつ持ちたい</p></div>
+      <div class="q reveal"><i>◎</i><p><small>いずれは、</small>自分の商品や講座を持ちたい</p></div>
+      <div class="q reveal"><i>⌂</i><p><small>SNSの発信を、</small>ちゃんと収益につなげたい</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="t0">
+  <div class="wrap">
+    <div class="teacher reveal">
+      <img src="img/profile-photo.jpg" alt="すすむ">
+      <div><h3>講師：すすむ</h3><p>AI×SNS副業の発信と、AI画像・動画の制作を行う。SNS発信で集客し、AI制作・講座で事業を展開。このページの制作実績も、自身がAIを活用して制作。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2 class="reveal">「作れる」で終わらせず、<br><span class="g">「稼げる」に変えませんか？</span></h2>
+    <a class="btn" href="#FORM_URL">無料で勉強会に参加する</a>
+    <p class="limit">今回だけのゲリラ開催・無料ですが人数限定で行います</p>
+  </div>
+</div>
+
+<div class="sticky" id="sticky"><a class="btn" href="#FORM_URL">無料で勉強会に参加する</a></div>
+<footer>© すすむ</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const st=document.getElementById('sticky'),hero=document.querySelector('.hero'),fin=document.querySelector('.final');
+addEventListener('scroll',()=>{const h=hero.getBoundingClientRect().bottom<0,f=fin.getBoundingClientRect().top<innerHeight;st.classList.toggle('on',h&&!f)},{passive:true});
+</script>
+</body>
+</html>
