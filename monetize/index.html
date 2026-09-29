@@ -6,74 +6,102 @@
 <title>無料Zoom勉強会｜AIで作れるを、稼げるに変える</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Inter:wght@800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07070d;--ink:#fff;--sub:#a9a9bf;--line:rgba(255,255,255,.1);--grad:linear-gradient(120deg,#ff4d6d,#8b5cf6,#22d3ee)}
+:root{--bg:#fff;--soft:#f5f7ff;--ink:#141a2e;--sub:#5b6178;--line:#e6e9f5;--blue:#2f5bff;--pink:#ff4d8d;--yellow:#ffe14d;--grad:linear-gradient(120deg,#ff4d8d,#8b5cf6,#2f9bff)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.8;overflow-x:hidden}
 img{display:block;max-width:100%}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:80px 0 60px}
-.wall{position:absolute;inset:-10% -20%;display:flex;flex-direction:column;gap:14px;transform:rotate(-8deg);opacity:.75}
+.mk{background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:72px 0 56px;background:var(--soft)}
+.wall{position:absolute;inset:-10% -20%;display:flex;flex-direction:column;gap:14px;transform:rotate(-8deg)}
 .row{display:flex;gap:14px;width:max-content;animation:slide 60s linear infinite}
 .row.r2{animation-direction:reverse;animation-duration:75s}
-.row img{height:170px;width:auto;border-radius:12px}
+.row img{height:170px;width:auto;border-radius:14px;box-shadow:0 8px 24px rgba(20,26,46,.12)}
 @keyframes slide{to{transform:translateX(-50%)}}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,13,.35) 0%,rgba(7,7,13,.75) 35%,rgba(7,7,13,.9) 70%,var(--bg) 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 55%,rgba(255,255,255,.96) 0%,rgba(255,255,255,.88) 45%,rgba(255,255,255,.35) 100%)}
 .hero .wrap{position:relative;z-index:2;text-align:center}
-.pill{display:inline-block;font-size:13px;font-weight:700;padding:6px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);backdrop-filter:blur(6px);margin-bottom:24px}
-.pill b{color:#22d3ee}
-h1{font-size:clamp(28px,7vw,52px);font-weight:900;line-height:1.4;margin:0 0 20px}
-.lead{color:var(--sub);font-size:clamp(14px,3.6vw,18px);margin:0 auto 34px;max-width:540px}
-.btn{position:relative;display:inline-block;width:100%;max-width:420px;padding:20px 24px;border-radius:16px;background:var(--grad);color:#fff;font-weight:900;font-size:18px;text-decoration:none;box-shadow:0 10px 40px rgba(139,92,246,.45);transition:transform .2s;overflow:hidden}
+.pill{display:inline-block;font-size:13px;font-weight:900;padding:7px 16px;border-radius:99px;background:var(--pink);color:#fff;margin-bottom:22px;box-shadow:0 6px 18px rgba(255,77,141,.35)}
+.pill b{color:var(--yellow)}
+h1{font-size:clamp(30px,7.4vw,54px);font-weight:900;line-height:1.4;margin:0 0 20px}
+.lead{color:var(--sub);font-size:clamp(14px,3.7vw,17px);margin:0 auto 30px;max-width:560px}
+.lead strong{color:var(--ink)}
+.btn{position:relative;display:inline-block;width:100%;max-width:420px;padding:20px 24px;border-radius:99px;background:var(--grad);color:#fff;font-weight:900;font-size:18px;text-decoration:none;box-shadow:0 12px 30px rgba(139,92,246,.35);transition:transform .2s;overflow:hidden}
 .btn:hover{transform:translateY(-2px)}
-.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35),transparent 70%);background-size:250% 100%;animation:shine 3s infinite}
+.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.45),transparent 70%);background-size:250% 100%;animation:shine 3s infinite}
 @keyframes shine{from{background-position:150% 0}to{background-position:-100% 0}}
 .limit{font-size:13px;color:var(--sub);margin-top:12px}
-.limit:before{content:"●";color:#ff4d6d;margin-right:6px;animation:blink 1.4s infinite}
+.limit:before{content:"●";color:var(--pink);margin-right:6px;animation:blink 1.4s infinite}
 @keyframes blink{50%{opacity:.2}}
-section{padding:88px 0}
-section.t0{padding-top:0}
-.eyebrow{font-family:Inter,sans-serif;font-weight:900;font-size:13px;letter-spacing:.2em;text-align:center;margin:0 0 10px}
-h2{font-size:clamp(23px,5.6vw,36px);font-weight:900;line-height:1.5;text-align:center;margin:0 0 40px}
+
+section{padding:84px 0}
+section.soft{background:var(--soft)}
+.eyebrow{font-family:Inter,sans-serif;font-weight:900;font-size:13px;letter-spacing:.2em;text-align:center;margin:0 0 8px;color:var(--blue)}
+.eyebrow:before{content:"» "}.eyebrow:after{content:" «"}
+h2{font-size:clamp(24px,5.8vw,36px);font-weight:900;line-height:1.5;text-align:center;margin:0 0 36px}
+
 .ba{display:grid;gap:18px}
-.ba figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#111;position:relative}
-.ba figcaption{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(0,0,0,.65);backdrop-filter:blur(4px)}
-.note{font-size:13px;color:var(--sub);text-align:center;margin-top:18px}
+.ba figure{margin:0;border-radius:20px;overflow:hidden;background:#fff;position:relative;box-shadow:0 10px 30px rgba(20,26,46,.1)}
+.ba figcaption{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.note{font-size:13px;color:var(--sub);text-align:center;margin-top:16px}
+
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.works img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.works img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
 .works .big{grid-column:span 2;grid-row:span 2}
+
+.neq{text-align:center;font-size:clamp(22px,5.4vw,32px);font-weight:900;margin:0 0 6px}
+.neq span{display:inline-block;padding:4px 16px;border-radius:12px;background:#fff;box-shadow:0 4px 14px rgba(20,26,46,.08)}
+.neq i{font-style:normal;color:var(--pink);margin:0 10px}
+.ways{display:grid;gap:14px}
+.way{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:20px;background:#fff;border:2px solid var(--line);transition:border-color .3s}
+.way:hover{border-color:var(--blue)}
+.way b{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-family:Inter,sans-serif;font-weight:900;color:#fff;background:var(--grad)}
+.way h3{margin:0 0 2px;font-size:18px}
+.way p{margin:0;color:var(--sub);font-size:14px}
+
 .learn{display:grid;gap:14px;counter-reset:n}
-.card{padding:26px 24px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01));display:flex;gap:18px;align-items:flex-start}
-.card:before{counter-increment:n;content:"0" counter(n);font-family:Inter,sans-serif;font-weight:900;font-size:30px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{padding:24px;border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(20,26,46,.08);display:flex;gap:18px;align-items:flex-start}
+.card:before{counter-increment:n;content:"0" counter(n);font-family:Inter,sans-serif;font-weight:900;font-size:32px;line-height:1;color:var(--blue)}
 .card h3{margin:0 0 4px;font-size:18px}
 .card p{margin:0;color:var(--sub);font-size:14px}
-.road{display:grid;gap:14px}
-.step{padding:24px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);position:relative}
-.step b{font-family:Inter,sans-serif;font-size:12px;letter-spacing:.15em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.step h3{margin:4px 0;font-size:19px}.step p{margin:0;color:var(--sub);font-size:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chips span{font-size:13px;padding:6px 12px;border-radius:99px;background:rgba(139,92,246,.18);border:1px solid rgba(139,92,246,.4)}
+
 .for{display:grid;gap:12px}
-.q{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
-.q i{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;background:var(--grad)}
-.q p{margin:0;font-weight:700;font-size:15px;line-height:1.6}.q small{display:block;font-weight:400;color:var(--sub);font-size:13px}
-.teacher{display:flex;gap:24px;align-items:center;padding:28px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
-.teacher img{width:120px;height:120px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px #8b5cf6}
-.teacher h3{margin:0 0 6px;font-size:20px}
-.teacher p{margin:0;color:var(--sub);font-size:14px}
-.final{text-align:center;padding:100px 0 140px;position:relative;overflow:hidden}
-.final:before{content:"";position:absolute;left:50%;top:40%;width:600px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(139,92,246,.35),transparent 60%);pointer-events:none}
-.final .wrap{position:relative}
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(7,7,13,.85);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:50;transform:translateY(110%);transition:transform .3s;text-align:center}
+.q{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;background:#fff;border:2px solid var(--line)}
+.q i{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#eef2ff;color:var(--blue)}
+.q svg{width:22px;height:22px}
+.q p{margin:0;font-weight:700;font-size:15px;line-height:1.6}
+.q small{display:block;font-weight:400;color:var(--sub);font-size:13px}
+
+.msg-in{background:#fff;border-radius:24px;box-shadow:0 12px 36px rgba(20,26,46,.1);padding:32px 24px;text-align:center}
+.msg-photo img{width:150px;height:auto;margin:0 auto}
+.msg-name b{display:block;font-size:24px;margin-top:10px}
+.msg-name em{display:block;font-family:Inter,sans-serif;font-style:normal;font-size:12px;letter-spacing:.25em;color:var(--blue)}
+.msg-name span{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;padding:3px 12px;border-radius:99px;background:#eef2ff;color:var(--blue)}
+.msg-copy{font-size:clamp(21px,5vw,28px);font-weight:900;line-height:1.6;margin:22px 0 14px}
+.msg-body p{margin:0 0 10px;color:var(--sub);font-size:15px}
+.msg-body strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+.stats div{padding:14px 8px;border-radius:14px;background:var(--soft)}
+.stats b{display:block;font-family:Inter,"Noto Sans JP",sans-serif;font-size:22px;font-weight:900;color:var(--blue);line-height:1.3}
+.stats span{font-size:12px;color:var(--sub)}
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.proof figure{margin:0}
+.proof img{border-radius:14px;box-shadow:0 6px 18px rgba(20,26,46,.1)}
+.proof figcaption{font-size:12px;font-weight:700;text-align:center;margin-top:8px}
+
+.final{text-align:center;padding:96px 0 140px;background:linear-gradient(180deg,#fff,#eef2ff)}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:50;transform:translateY(110%);transition:transform .3s;text-align:center}
 .sticky.on{transform:none}
 .sticky .btn{padding:15px;font-size:16px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
-footer{text-align:center;color:#555;font-size:12px;padding-bottom:100px}
-@media (max-width:560px){.row img{height:120px}.teacher{flex-direction:column;text-align:center}.works{grid-template-columns:repeat(2,1fr)}.works img:nth-child(6){display:none}.lead br.pc{display:none}}
+footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
+@media (max-width:560px){.row img{height:120px}.works{grid-template-columns:repeat(2,1fr)}.works img:nth-child(6){display:none}}
 @media (prefers-reduced-motion:reduce){.row,.btn:after,.limit:before{animation:none}}
 </style>
 </head>
@@ -86,31 +114,32 @@ footer{text-align:center;color:#555;font-size:12px;padding-bottom:100px}
     <div class="row"><img src="img/ai-09.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-05.jpg" alt=""><img src="img/ai-09.jpg" alt=""><img src="img/design-16.jpg" alt=""><img src="img/ai-04.jpg" alt=""><img src="img/design-08.jpg" alt=""><img src="img/ai-01.jpg" alt=""><img src="img/design-05.jpg" alt=""></div>
   </div>
   <div class="wrap">
-    <div class="pill">⚡ 今回だけの <b>ゲリラ開催</b>｜無料Zoom勉強会</div>
-    <h1>AIで作れても、<br>それだけでは<br><span class="g">1円にもならない。</span></h1>
-    <p class="lead">動画も、画像も、LPも。AIで「作れる」時代になりました。<br>でも、仕事になるかどうかは「どう稼ぐか」を知っているか次第。<br><strong style="color:#fff">いつもの勉強会とは別に、今回だけ特別に</strong>、<br class="pc">「AIで作れるを、稼げるに変える」をテーマにゲリラ開催します。</p>
+    <div class="pill">⚡ 今回だけの<b>ゲリラ開催</b>｜無料Zoom勉強会</div>
+    <h1><span style="word-break: keep-all; overflow-wrap: anywhere;">AIで​作れても、<br>​それだけでは<br><span class="g">​1円にもならない。</span></span></h1>
+    <p class="lead"><span style="word-break: keep-all; overflow-wrap: anywhere;">動画も、​画像も、​LPも。​AIで​「作れる」​時代に​なりました。<br>​でも、​仕事に​なるかは​「どう​稼ぐか」を​知っているか次第。</span></p>
+    <p class="lead"><span style="word-break: keep-all; overflow-wrap: anywhere;"><strong>いつもの​勉強会とは​別に、​今回だけ​特別に。</strong><br>​「AIで​作れるを、​稼げるに​変える」を​テーマに​ゲリラ開催します。</span></p>
     <a class="btn" href="#FORM_URL">無料で勉強会に参加する</a>
-    <p class="limit">今回だけのゲリラ開催・無料ですが人数限定で行います</p>
+    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">今回だけの​ゲリラ開催・無料ですが​人数限定です</span></p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <p class="eyebrow g">BEFORE → AFTER</p>
-    <h2 class="reveal">ここまでは、<br>AIで誰でも作れるようになった。</h2>
+    <p class="eyebrow">BEFORE → AFTER</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">ここまでは、​AIで<br><span class="mk">​誰でも​作れる</span>ようになった。</span></h2>
     <div class="ba">
-      <figure class="reveal"><img src="img/ai-04.jpg" alt="商品写真のBefore/After" loading="lazy"><figcaption>商品写真 → 広告ビジュアル</figcaption></figure>
-      <figure class="reveal"><img src="img/ai-09.jpg" alt="人物写真のBefore/After" loading="lazy"><figcaption>人物 → 広告モデル</figcaption></figure>
-      <figure class="reveal"><img src="img/ai-10.jpg" alt="料理写真のBefore/After" loading="lazy"><figcaption>料理写真 → 販促ビジュアル</figcaption></figure>
+      <figure class="reveal"><img src="img/ai-04.jpg" alt="商品写真のBefore/After" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">商品写真 → 広告ビジュアル</span></figcaption></figure>
+      <figure class="reveal"><img src="img/ai-09.jpg" alt="人物写真のBefore/After" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">人物 → 広告モデル</span></figcaption></figure>
+      <figure class="reveal"><img src="img/ai-10.jpg" alt="料理写真のBefore/After" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">料理写真 → 販促ビジュアル</span></figcaption></figure>
     </div>
-    <p class="note">※左がBefore・右がAfter。すすむがAIで制作した実例です</p>
+    <p class="note"><span style="word-break: keep-all; overflow-wrap: anywhere;">左が​Before・右が​After。​すすむが​AIで​制作した​実例です</span></p>
   </div>
 </section>
 
-<section class="t0">
+<section class="soft">
   <div class="wrap">
-    <p class="eyebrow g">WORKS</p>
-    <h2 class="reveal">でも、作品が増えても<br>収入は増えない。</h2>
+    <p class="eyebrow">WORKS</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">でも、​作品が​増えても<br><span class="mk">​収入は​増えない。</span></span></h2>
     <div class="works reveal">
       <img class="big" src="img/design-05.jpg" alt="" loading="lazy">
       <img src="img/design-16.jpg" alt="" loading="lazy">
@@ -122,65 +151,87 @@ footer{text-align:center;color:#555;font-size:12px;padding-bottom:100px}
   </div>
 </section>
 
-<section class="t0">
+<section>
   <div class="wrap">
-    <p class="eyebrow g">MONETIZE</p>
-    <h2 class="reveal">作れる ≠ 稼げる。<br><span class="g">稼ぎ方は、5つある。</span></h2>
-    <div class="road">
-      <div class="step reveal"><b>01</b><h3>note・コンテンツ販売</h3><p>AIで作れるようになった知識や型を、商品として販売する</p></div>
-      <div class="step reveal"><b>02</b><h3>アフィリエイト</h3><p>自分が使って良かったAIツールやサービスを紹介して収益化</p></div>
-      <div class="step reveal"><b>03</b><h3>法人向けの動画・LP制作</h3><p>AIで作れる制作物を、企業向けのサービスとして提供する</p></div>
-      <div class="step reveal"><b>04</b><h3>自分の講座・コンサル</h3><p>「同じようにAIを学びたい人」に教える、自分のコンテンツをつくる</p></div>
-      <div class="step reveal"><b>05</b><h3>SNS・インフルエンサー</h3><p>AIを活用して発信を伸ばし、影響力そのものを収入に変える</p></div>
+    <p class="eyebrow">MONETIZE</p>
+    <p class="neq reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;"><span>作れる</span><i>​≠</i><span>稼げる</span></span></p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">AIの​稼ぎ方は、<span class="g">​5つある。</span></span></h2>
+    <div class="ways">
+      <div class="way reveal"><b>01</b><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">note・コンテンツ販売</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">AIで​身に​つけた​知識や​型を、​商品と​して​販売する</span></p></div></div>
+      <div class="way reveal"><b>02</b><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">アフィリエイト</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">使って​良かった​AIツールや​サービスを​紹介して​収益化</span></p></div></div>
+      <div class="way reveal"><b>03</b><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">法人​向けの​動画・LP制作</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">AIで​作れる​制作物を、​企業向けの​サービスと​して​提供する</span></p></div></div>
+      <div class="way reveal"><b>04</b><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">自分の​講座・コンサル</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">同じように​AIを​学びたい​人に​教える、​自分の​コンテンツを​つくる</span></p></div></div>
+      <div class="way reveal"><b>05</b><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">SNS・インフルエンサー</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">AIを​活用して​発信を​伸ばし、​影響力を​収入に​変える</span></p></div></div>
     </div>
   </div>
 </section>
 
-<section class="t0">
+<section class="soft">
   <div class="wrap">
-    <p class="eyebrow g">WHAT YOU LEARN</p>
-    <h2 class="reveal">勉強会でわかること</h2>
+    <p class="eyebrow">WHAT YOU LEARN</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">勉強会で​わかる​こと</span></h2>
     <div class="learn">
-      <div class="card reveal"><div><h3>AIで稼ぐ5つの道の全体像</h3><p>それぞれ、何が必要で、どう収入になるのか</p></div></div>
-      <div class="card reveal"><div><h3>自分に合う稼ぎ方の選び方</h3><p>今のスキル・時間・目指す働き方から、最初に選ぶべき道</p></div></div>
-      <div class="card reveal"><div><h3>最初の1円までの流れ</h3><p>「作れる」を「稼げる」に変えるために、何から始めるか</p></div></div>
+      <div class="card reveal"><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">AIで​稼ぐ​5つの​道の​全体​像</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">それぞれ何が​必要で、​どう​収入に​なるのか</span></p></div></div>
+      <div class="card reveal"><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">自分に​合う​稼ぎ方の​選び方</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">今の​スキル・時間・目指す​働き方から、​最初に​選ぶべき道</span></p></div></div>
+      <div class="card reveal"><div><h3><span style="word-break: keep-all; overflow-wrap: anywhere;">最初の​1円までの​流れ</span></h3><p><span style="word-break: keep-all; overflow-wrap: anywhere;">「作れる」を​「稼げる」に​変える​ために、​何から​始めるか</span></p></div></div>
     </div>
   </div>
 </section>
 
-<section class="t0">
+<section>
   <div class="wrap">
-    <p class="eyebrow g">FOR YOU</p>
-    <h2 class="reveal">こんな方におすすめ</h2>
+    <p class="eyebrow">FOR YOU</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">こんな​方に​おすすめ</span></h2>
     <div class="for">
-      <div class="q reveal"><i>＋</i><p><small>AIツールは触ってみたけど、</small>まだお金になっていない</p></div>
-      <div class="q reveal"><i>✦</i><p><small>作れるようになったけど、</small>どう仕事にすればいいか分からない</p></div>
-      <div class="q reveal"><i>↗</i><p><small>会社の給料以外に、</small>収入の柱をもうひとつ持ちたい</p></div>
-      <div class="q reveal"><i>◎</i><p><small>いずれは、</small>自分の商品や講座を持ちたい</p></div>
-      <div class="q reveal"><i>⌂</i><p><small>SNSの発信を、</small>ちゃんと収益につなげたい</p></div>
+      <div class="q reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></i><p><span style="word-break: keep-all; overflow-wrap: anywhere;"><small>AIツールは​触ってみたけど、</small>​まだ​お金に​なっていない</span></p></div>
+      <div class="q reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></i><p><span style="word-break: keep-all; overflow-wrap: anywhere;"><small>作れるようになったけど、</small>​どう​仕事に​すれば​いいか​分からない</span></p></div>
+      <div class="q reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></i><p><span style="word-break: keep-all; overflow-wrap: anywhere;"><small>会社の​給料以外に、</small>​収入の​柱を​もう​ひとつ​持ちたい</span></p></div>
+      <div class="q reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></i><p><span style="word-break: keep-all; overflow-wrap: anywhere;"><small>いずれは、</small>​自分の​商品や​講座を​持ちたい</span></p></div>
+      <div class="q reveal"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg></i><p><span style="word-break: keep-all; overflow-wrap: anywhere;"><small>SNSの​発信を、</small>ちゃんと​収益に​つなげたい</span></p></div>
     </div>
   </div>
 </section>
 
-<section class="t0">
+<section class="soft">
   <div class="wrap">
-    <div class="teacher reveal">
-      <img src="img/profile-photo.jpg" alt="すすむ">
-      <div><h3>講師：すすむ</h3><p>AI×SNS副業の発信と、AI画像・動画の制作を行う。SNS発信で集客し、AI制作・講座で事業を展開。このページの制作実績も、自身がAIを活用して制作。</p></div>
+    <p class="eyebrow">MESSAGE</p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">講師紹介</span></h2>
+    <div class="msg-in reveal">
+      <div class="msg-photo">
+        <img src="img/profile-2.png" alt="すすむ">
+        <div class="msg-name"><b>すすむ</b><em>SUSUMU</em><span>AIスマートLab 代表</span></div>
+      </div>
+      <p class="msg-copy"><span style="word-break: keep-all; overflow-wrap: anywhere;">AIを<span class="mk">​武器</span>に​して、<br>​働き方の​未来を​つくる。</span></p>
+      <div class="msg-body">
+        <p><span style="word-break: keep-all; overflow-wrap: anywhere;">AIツールの​使い方を​教えられる​人は、​今や​無数に​います。</span></p>
+        <p><span style="word-break: keep-all; overflow-wrap: anywhere;">ですが<strong>​「仕事に​つなげる​方法」</strong>まで​教えられる​人は、​ほとんどいません。</span></p>
+        <p><span style="word-break: keep-all; overflow-wrap: anywhere;">AIで​事業を​立ち上げ、​案件を​獲得し、​単価を​上げてきた​過程。​そして<strong>​SNS集客の​ノウハウ</strong>まで、​お話しします。</span></p>
+      </div>
+      <div class="stats">
+        <div><b>1,000本+</b><span>動画制作実績</span></div>
+        <div><b>1億回</b><span>ショート累計再生</span></div>
+        <div><b>40社+</b><span>累計支援企業</span></div>
+        <div><b>4,000万円</b><span>累計売上</span></div>
+      </div>
+      <div class="proof">
+        <figure><img src="img/proof-sum-01.webp" alt="実績" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">総フォロワー20万人達成</span></figcaption></figure>
+        <figure><img src="img/proof-sum-02.webp" alt="実績" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">8アカウント以上で​フォロワー1万人超を​再現</span></figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="final">
   <div class="wrap">
-    <h2 class="reveal">「作れる」で終わらせず、<br><span class="g">「稼げる」に変えませんか？</span></h2>
+    <p class="pill"><span style="word-break: keep-all; overflow-wrap: anywhere;">⚡ 今回だけの<b>​ゲリラ開催</b></span></p>
+    <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">「作れる」で​終わらせず、<br><span class="g">​「稼げる」に​変えませんか？</span></span></h2>
     <a class="btn" href="#FORM_URL">無料で勉強会に参加する</a>
-    <p class="limit">今回だけのゲリラ開催・無料ですが人数限定で行います</p>
+    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">今回だけの​ゲリラ開催・無料ですが​人数限定です</span></p>
   </div>
 </div>
 
 <div class="sticky" id="sticky"><a class="btn" href="#FORM_URL">無料で勉強会に参加する</a></div>
-<footer>© すすむ</footer>
+<footer>© AIスマートLab すすむ</footer>
 
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
