@@ -118,6 +118,26 @@ h2{font-size:clamp(24px,5.8vw,36px);font-weight:900;line-height:1.5;text-align:c
 .faq summary:after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--blue)}
 .faq[open] summary:after{content:"−"}
 .faq .a{padding:0 20px 18px;color:var(--sub);font-size:15px}
+.vids{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.vd{margin:0;position:relative;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 10px 30px rgba(20,26,46,.12);aspect-ratio:9/16}
+.vd.w{grid-column:span 2;aspect-ratio:16/9}
+.vd video{width:100%;height:100%;object-fit:cover;display:block}
+.vd figcaption{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.92)}
+.pile{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pile img{width:100%;height:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;filter:saturate(.85)}
+.pile img.x2{grid-column:span 2;aspect-ratio:auto}
+.yen{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-3deg);background:#fff;border-radius:22px;padding:20px 26px;text-align:center;box-shadow:0 20px 50px rgba(20,26,46,.3);width:86%;border:3px solid var(--ink)}
+.yen b{display:block;font-family:Inter,sans-serif;font-size:64px;line-height:1;color:var(--pink)}
+.yen span{display:block;margin-top:8px;font-weight:900;font-size:15px;line-height:1.6}
+.cd{margin:26px auto 0;max-width:460px;background:var(--ink);color:#fff;border-radius:22px;padding:20px 16px 18px;box-shadow:0 14px 34px rgba(20,26,46,.3)}
+.cd-t{margin:0;font-weight:900;font-size:17px;color:var(--yellow)}
+.cd-n{display:flex;justify-content:center;align-items:center;gap:6px;margin:10px 0}
+.cd-n span{background:#fff;color:var(--pink);border-radius:14px;min-width:84px;padding:6px 0 4px}
+.cd-n b{display:block;font-family:Inter,sans-serif;font-size:44px;line-height:1.1}
+.cd-n i{display:block;font-style:normal;font-size:11px;font-weight:700;color:var(--sub)}
+.cd-n em{font-style:normal;font-family:Inter,sans-serif;font-size:32px;font-weight:900}
+.cd-f{margin:0;font-size:14px;line-height:1.7}
+.cd-f strong{color:var(--yellow)}
 .final{text-align:center;padding:96px 0 140px;background:linear-gradient(180deg,#fff,#eef2ff)}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:50;transform:translateY(110%);transition:transform .3s;text-align:center}
 .sticky.on{transform:none}
@@ -143,7 +163,7 @@ footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
     <p class="lead"><span style="word-break: keep-all; overflow-wrap: anywhere;">動画も、​画像も、​LPも。​AIで​「作れる」​時代に​なりました。<br>​でも、​仕事に​なるかは​「どう​稼ぐか」を​知っているか次第。</span></p>
     <p class="lead"><span style="word-break: keep-all; overflow-wrap: anywhere;"><strong>いつもの​勉強会とは​別に、​今回だけ​特別に。</strong><br>​「AIで​作れるを、​稼げるに​変える」を​テーマに​ゲリラ開催します。</span></p>
     <a class="btn" href="#FORM_URL">今すぐ予約する</a>
-    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">受付は​48時間限定・定員に​なり次第終了します</span></p>
+    <div class="cd reveal"><p class="cd-t"><span style="word-break: keep-all; overflow-wrap: anywhere;">⏰ 受付終了まで</span></p><div class="cd-n"><span><b data-h>48</b><i>時間</i></span><em>:</em><span><b data-m>00</b><i>分</i></span><em>:</em><span><b data-s>00</b><i>秒</i></span></div><p class="cd-f"><span style="word-break: keep-all; overflow-wrap: anywhere;">受付は<strong>​48時間限定</strong>。<br>​定員に​なり次第、<strong>​予告なく​終了</strong>します。</span></p></div>
   </div>
 </header>
 
@@ -160,28 +180,35 @@ footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
 
 <section>
   <div class="wrap">
-    <p class="eyebrow">BEFORE → AFTER</p>
+    <p class="eyebrow">MADE WITH AI</p>
     <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">ここまでは、​AIで<br><span class="mk">​誰でも​作れる</span>ようになった。</span></h2>
-    <div class="ba">
-      <figure class="reveal"><img src="img/ai-04.jpg" alt="商品写真のBefore/After" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">商品写真 → 広告ビジュアル</span></figcaption></figure>
-      <figure class="reveal"><img src="img/ai-09.jpg" alt="人物写真のBefore/After" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">人物 → 広告モデル</span></figcaption></figure>
-      <figure class="reveal"><img src="img/ai-10.jpg" alt="料理写真のBefore/After" loading="lazy"><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">料理写真 → 販促ビジュアル</span></figcaption></figure>
+    <div class="vids">
+      <figure class="vd w reveal"><video src="vid/wide-camp.mp4" poster="vid/wide-camp.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">P​R動画</span></figcaption></figure>
+      <figure class="vd  reveal"><video src="vid/v-ugc.mp4" poster="vid/v-ugc.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">UGC風の​広告動画</span></figcaption></figure>
+      <figure class="vd  reveal"><video src="vid/v-cosme.mp4" poster="vid/v-cosme.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">コスメの​広告動画</span></figcaption></figure>
+      <figure class="vd  reveal"><video src="vid/v-food.mp4" poster="vid/v-food.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">料理の​広告動画</span></figcaption></figure>
+      <figure class="vd  reveal"><video src="vid/v-avatar.mp4" poster="vid/v-avatar.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">AIアバター動画</span></figcaption></figure>
+      <figure class="vd w reveal"><video src="vid/wide-avatar.mp4" poster="vid/wide-avatar.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption><span style="word-break: keep-all; overflow-wrap: anywhere;">横型の​AIアバター解​説動画</span></figcaption></figure>
     </div>
-    <p class="note"><span style="word-break: keep-all; overflow-wrap: anywhere;">左が​Before・右が​After。​すすむが​AIで​制作した​実例です</span></p>
+    <p class="note"><span style="word-break: keep-all; overflow-wrap: anywhere;">すべて、​すすむが​AIで​制作した​動画です</span></p>
   </div>
 </section>
 
 <section class="soft">
   <div class="wrap">
-    <p class="eyebrow">WORKS</p>
+    <p class="eyebrow">BUT...</p>
     <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">でも、​作品が​増えても<br><span class="mk">​収入は​増えない。</span></span></h2>
-    <div class="works reveal">
-      <img class="big" src="img/design-05.jpg" alt="" loading="lazy">
+    <div class="pile reveal">
+      <img class="x2" src="img/ai-04.jpg" alt="" loading="lazy">
+      <img src="img/design-05.jpg" alt="" loading="lazy">
       <img src="img/design-16.jpg" alt="" loading="lazy">
+      <img class="x2" src="img/ai-09.jpg" alt="" loading="lazy">
       <img src="img/design-08.jpg" alt="" loading="lazy">
       <img src="img/ai-01.jpg" alt="" loading="lazy">
+      <img class="x2" src="img/ai-10.jpg" alt="" loading="lazy">
       <img src="img/design-15.jpg" alt="" loading="lazy">
       <img src="img/design-06.jpg" alt="" loading="lazy">
+      <div class="yen"><b>¥0</b><span>作品がどれだけ増えても、<br>稼ぎ方を知らなければ収入はゼロ。</span></div>
     </div>
   </div>
 </section>
@@ -284,7 +311,7 @@ footer{text-align:center;color:#9aa0b4;font-size:12px;padding:24px 0 100px}
     <p class="pill"><span style="word-break: keep-all; overflow-wrap: anywhere;">⚡ 今回だけの<b>​ゲリラ開催</b></span></p>
     <h2 class="reveal"><span style="word-break: keep-all; overflow-wrap: anywhere;">「作れる」で​終わらせず、<br><span class="g">​「稼げる」に​変えませんか？</span></span></h2>
     <a class="btn" href="#FORM_URL">今すぐ予約する</a>
-    <p class="limit"><span style="word-break: keep-all; overflow-wrap: anywhere;">受付は​48時間限定・定員に​なり次第終了します</span></p>
+    <div class="cd reveal"><p class="cd-t"><span style="word-break: keep-all; overflow-wrap: anywhere;">⏰ 受付終了まで</span></p><div class="cd-n"><span><b data-h>48</b><i>時間</i></span><em>:</em><span><b data-m>00</b><i>分</i></span><em>:</em><span><b data-s>00</b><i>秒</i></span></div><p class="cd-f"><span style="word-break: keep-all; overflow-wrap: anywhere;">受付は<strong>​48時間限定</strong>。<br>​定員に​なり次第、<strong>​予告なく​終了</strong>します。</span></p></div>
   </div>
 </div>
 
@@ -296,6 +323,13 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const st=document.getElementById('sticky'),hero=document.querySelector('.hero'),fin=document.querySelector('.final');
 addEventListener('scroll',()=>{const h=hero.getBoundingClientRect().bottom<0,f=fin.getBoundingClientRect().top<innerHeight;st.classList.toggle('on',h&&!f)},{passive:true});
+</script>
+<script>
+(function(){var K='bk_monetize_start',t0=Date.now();try{var v=localStorage.getItem(K);if(v)t0=+v;else localStorage.setItem(K,t0)}catch(e){}
+var end=t0+48*3600e3;function p(n){return(n<10?'0':'')+n}
+function tick(){var r=Math.max(0,end-Date.now()),h=Math.floor(r/3600e3),m=Math.floor(r%3600e3/60e3),x=Math.floor(r%60e3/1e3);
+document.querySelectorAll('[data-h]').forEach(e=>e.textContent=p(h));document.querySelectorAll('[data-m]').forEach(e=>e.textContent=p(m));document.querySelectorAll('[data-s]').forEach(e=>e.textContent=p(x))}
+tick();setInterval(tick,1000)})();
 </script>
 </body>
 </html>
