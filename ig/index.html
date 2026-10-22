@@ -68,11 +68,12 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 @media (max-width:900px){.gv{grid-template-columns:repeat(3,1fr)}.gh{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:700px){.grid{gap:8px}.it .no{font-size:11px;padding:3px 5px}.it .lb{display:none}.btn{font-size:16px}}
 #about{padding:46px 0 10px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1000px;margin:0 auto 18px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1100px;margin:0 auto 22px}
 .st{background:#fff;border:2px solid var(--blue);border-radius:16px;padding:16px 10px;text-align:center}
-.st b{display:block;font-size:clamp(28px,3.6vw,40px);font-weight:900;color:var(--blue);line-height:1.2}
+.st b{display:block;font-size:clamp(26px,3vw,36px);font-weight:900;color:var(--blue);line-height:1.25;margin:2px 0}
 .st b small{font-size:.5em;margin-left:2px}
-.st span{display:block;font-size:13px;font-weight:700;color:var(--sub);margin-top:4px;line-height:1.5}
+.st span{display:block;font-size:13px;font-weight:700;color:var(--sub);line-height:1.5}
+.evlinks{text-align:center;font-size:14px;font-weight:700;margin:14px 0 0}.evlinks a{color:var(--blue);margin:0 4px}
 .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:1000px;margin:0 auto 18px}
 .facts div{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6}
 .facts b{display:block;color:var(--ink);font-size:14px}
@@ -85,7 +86,7 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 .more .links{margin-top:6px;font-size:13px;font-weight:400;color:var(--sub)}
 .more a{color:var(--blue)}
 #ov img{max-width:94vw;max-height:88vh;border-radius:8px;background:#fff}
-@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.facts{grid-template-columns:1fr}.shots{grid-template-columns:1fr}}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.st:last-child{grid-column:1/-1}.facts{grid-template-columns:1fr}.shots{grid-template-columns:1fr}}
 @media (max-width:900px){.gv .it:nth-child(10){display:none}}
 .who{text-align:center;font-size:15px;font-weight:800;color:var(--sub);margin:-12px 0 18px}
 </style>
@@ -102,7 +103,7 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 
 <section id="price"><div class="wrap">
 <p class="label">≫ PRICE ≪</p>
-<h2>制作会社の相場より、<em>ずっと手軽に。</em></h2>
+<h2>認知・集客・採用を、<em>もっと手軽に。</em></h2>
 <div class="plans">
 <div class="plan">
 <span class="nm">UGC広告</span>
@@ -138,31 +139,20 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 <p class="label">≫ ABOUT ≪</p>
 <h2>SNSで、<em>結果を出してきました。</em></h2>
 <div class="stats">
-<div class="st"><b>1億回<small>超</small></b><span>動画の累計再生数</span></div>
-<div class="st"><b>13万人</b><span>自社SNSのフォロワー<br>（8か月で達成）</span></div>
-<div class="st"><b>470万<small>再生</small></b><span>運用代行の動画<br>（1本で）</span></div>
-<div class="st"><b>9名</b><span>SNS・動画の支援で<br>採用に成功</span></div>
-</div>
-<div class="facts">
-<div><b>ブライダル（Instagram）</b>フィード投稿だけで、ほぼ全投稿が万リーチ</div>
-<div><b>暮らし系（Instagram）</b>11投稿で総再生46万回</div>
-<div><b>高級鮨屋（TikTok・Instagram）</b>1本で470万再生。ほかにも47万・22万再生。街頭インタビュー動画で15万回再生</div>
-<div><b>自社アカウント</b>62投稿でフォロワー4.1万人・1446万再生</div>
-<div><b>取引先の業界</b>通信・アパレル・音楽・ブライダル・飲食・美容など</div>
-<div><b>キャスティング</b>所属モデル・提携インフルエンサーのSNS総フォロワー約100万人</div>
+<div class="st"><span>SNS総フォロワー</span><b>20万人</b><span>達成</span></div>
+<div class="st"><span>累計</span><b>8個以上</b><span>の万垢を達成</span></div>
+<div class="st"><b>40社以上</b><span>の法人実績</span></div>
+<div class="st"><span>累計再生</span><b>1億回</b><span>越え</span></div>
+<div class="st"><span>制作本数</span><b>1000本</b><span>以上</span></div>
 </div>
 <div class="shots"><button type="button" class="shot" data-src="about/s1_p14.jpg"><img loading="lazy" src="about/s1_p14.jpg" alt="実績の画面"></button><button type="button" class="shot" data-src="about/s1_p18.jpg"><img loading="lazy" src="about/s1_p18.jpg" alt="実績の画面"></button><button type="button" class="shot" data-src="about/s2_p12.jpg"><img loading="lazy" src="about/s2_p12.jpg" alt="実績の画面"></button></div>
+<p class="evlinks">制作実績はこちら：<a href="https://camp.ai-smart-lab.com/" target="_blank" rel="noopener">camp.ai-smart-lab.com</a>　<a href="https://www.ai-smart-lab.com/" target="_blank" rel="noopener">www.ai-smart-lab.com</a></p>
 </div></section>
 
-<section id="more"><div class="wrap">
-<div class="more">
-<p>サイト制作やSNS運用のご相談も、ご要望があれば別途お受けします。</p>
-<p class="links">制作実績：<a href="https://camp.ai-smart-lab.com/" target="_blank" rel="noopener">camp.ai-smart-lab.com</a>　<a href="https://www.ai-smart-lab.com/" target="_blank" rel="noopener">www.ai-smart-lab.com</a></p>
-</div>
-</div></section>
+
 
 <div class="cta"><div class="wrap">
-<p id="applyMsg">お申し込みは、メールでもLINEでも結構です。</p>
+<p id="applyMsg">サイト制作・SNS運用のご相談も、ご要望があれば別途お受けします。<br>お申し込みはメールでもLINEでも結構です。</p>
 <div class="btns">
 <a class="btn mail" href="mailto:ai.smart.lab06@gmail.com?subject=%E5%BA%83%E5%91%8A%E5%8B%95%E7%94%BB%E3%81%AE%E3%81%8A%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF">メールで申し込む<i>→</i></a>
 <a class="btn line" href="https://liff.line.me/2006550850-PcLDeNNe?unique_key=3r9Agw&amp;ts=1792662851" id="apply">LINEで申し込む<i>→</i></a>
