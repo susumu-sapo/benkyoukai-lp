@@ -89,6 +89,20 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 @media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.st:last-child{grid-column:1/-1}.facts{grid-template-columns:1fr}.shots{grid-template-columns:1fr}}
 @media (max-width:900px){.gv .it:nth-child(10){display:none}}
 .who{text-align:center;font-size:15px;font-weight:800;color:var(--sub);margin:-12px 0 18px}
+.msg{background:linear-gradient(150deg,#0a1533 0%,#0f1f4d 55%,#12275c 100%);color:#fff;position:relative;overflow:hidden;padding:48px 0 40px;margin-top:0}
+.msg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 82% 22%,rgba(201,169,74,.16),transparent 58%);pointer-events:none}
+.msg .wrap{position:relative;z-index:2}
+.msg-eb{text-align:center;font-size:11.5px;letter-spacing:.34em;font-weight:700;color:#c9a94a;margin:0 0 8px}
+.msg-eb::before{content:"— "}.msg-eb::after{content:" —"}
+.msg-t{text-align:center;font-family:"Noto Serif JP","Yu Mincho","YuMincho",serif;font-size:clamp(27px,5vw,42px);font-weight:700;letter-spacing:.06em;margin:0 0 26px;color:#fff}
+.msg-photo{position:relative;margin:0 auto 4px;width:min(62%,230px)}
+.msg-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;border-radius:50%;box-shadow:0 14px 34px rgba(3,10,28,.55);display:block}
+.msg-name{position:relative;z-index:3;display:block;width:fit-content;margin:-18px auto 0;text-align:center;background:var(--blue);border-radius:12px;padding:12px 22px;box-shadow:0 8px 22px rgba(5,12,32,.5)}
+.msg-name b{display:block;font-size:23px;font-weight:900;letter-spacing:.08em;line-height:1.3}
+.msg-name em{display:block;font-style:normal;font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.72);margin-top:1px}
+.msg-name span{display:block;font-size:11.5px;color:rgba(255,255,255,.85);margin-top:5px;font-weight:700}
+.msg-copy{text-align:center;font-family:"Noto Serif JP","Yu Mincho","YuMincho",serif;font-size:clamp(21px,4.4vw,36px);font-weight:700;line-height:1.6;letter-spacing:.02em;margin:22px 0 0}
+.msg-copy .y{color:#ffd84d}
 </style>
 </head>
 <body>
@@ -134,6 +148,16 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 <div class="wall" id="wall"></div>
 </div></section>
 
+
+<section class="msg"><div class="wrap">
+<p class="msg-eb">MESSAGE</p>
+<h2 class="msg-t">代表メッセージ</h2>
+<div class="msg-photo">
+<img src="about/profile.jpg" alt="すすむ" loading="lazy">
+<div class="msg-name"><b>すすむ</b><em>SUSUMU</em><span>AIスマートLab 代表</span></div>
+</div>
+<p class="msg-copy">AIを<span class="y">武器</span>にして、<br>働き方の未来をつくる。</p>
+</div></section>
 
 <section id="about"><div class="wrap">
 <p class="label">≫ ABOUT ≪</p>
