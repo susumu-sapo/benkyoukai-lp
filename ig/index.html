@@ -122,8 +122,10 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 .shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;padding:0;background:#fff;cursor:pointer;transition:transform .25s}
 .shot:hover{transform:translateY(-4px)}
 .shot img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-.evlinks{text-align:center;font-size:14px;font-weight:700;margin:16px 0 0;color:#c9cfdc}.evlinks a{color:#8ea8ff;margin:0 4px}
+.evlinks{text-align:center;font-size:14px;font-weight:700;margin:16px 0 0;color:#c9cfdc}.evlinks a{color:#8ea8ff;margin:0 4px;white-space:nowrap;display:inline-block}
 @media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.st:last-child{grid-column:1/-1}.shots{grid-template-columns:1fr}}
+h1,h2,.msg-copy,.msg-t{text-wrap:balance}
+.st span small{display:block;font-size:11px;font-weight:700;opacity:.85}
 </style>
 </head>
 <body>
@@ -131,7 +133,7 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 <div class="strap"><span>初回限定</span>UGC広告を <b>1本3万円〜</b> でお試しいただけます</div>
 <header class="hero">
 <img class="poster" src="../v2media/hero_h.jpg" alt="">
-<video id="heroV" muted loop playsinline preload="none" poster="../v2media/hero_h.jpg"></video>
+<video id="heroV" muted loop playsinline autoplay preload="none" poster="../v2media/hero_h.jpg"></video>
 <div class="in">
 <div class="brand">AIスマートLab</div>
 <h1>商品写真から、<br><em>広告動画</em>をつくります。</h1>
@@ -189,7 +191,7 @@ footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-ali
 <h2>AIとSNSで、<em>結果を出してきました。</em></h2>
 <div class="stats">
 <div class="st"><b>20万人</b><span>SNS総フォロワー</span></div>
-<div class="st"><b>8個以上</b><span>万垢（1万フォロワー超え）達成</span></div>
+<div class="st"><b>8個以上</b><span>万垢達成<small>（1万フォロワー超え）</small></span></div>
 <div class="st"><b>40社以上</b><span>法人実績</span></div>
 <div class="st"><b>1億回超</b><span>累計再生</span></div>
 <div class="st"><b>1000本以上</b><span>制作本数</span></div>
@@ -222,6 +224,13 @@ var C=[["all","すべて"],["ugc","UGC広告"],["cm","CM・プロモーション
 C=C.filter(function(c){return c[0]==='all'||V.some(function(it){return it[1]===c[0];});});
 var wall=document.getElementById('wall'),chips=document.getElementById('chips'),cur='all';
 var touch=window.matchMedia('(hover:none)').matches,still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// スマホ：画面に入った作品だけ再生する（同時に動くのは画面の中の数本だけ）
+var tio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){var b=e.target,v=b._v;
+  if(e.isIntersecting){if(!v){v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;v.autoplay=true;v.preload='metadata';
+      v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('autoplay','');v.src=b._src;
+      v.addEventListener('loadedmetadata',function(){v.currentTime=v.duration*0.3;});b.insertBefore(v,b.querySelector('.lb'));b._v=v;}
+    v.play().then(function(){b.classList.add('play');}).catch(function(){});}
+  else if(v){v.pause();b.classList.remove('play');}});},{threshold:.55}):null;
 var items=V.map(function(it,k){var b=document.createElement('button');b.type='button';b.className='it';b.dataset.c=it[1];b.dataset.s=it[3];
   var no=('0'+(k+1)).slice(-2);it.no=no;
   b.innerHTML='<span class="no">'+no+'</span><img loading="lazy" src="../ad/media/'+it[0]+'.jpg" alt=""><span class="lb"></span>';
@@ -232,6 +241,7 @@ var items=V.map(function(it,k){var b=document.createElement('button');b.type='bu
       v.addEventListener('loadedmetadata',function(){v.currentTime=v.duration*0.3;});}
       v.play().catch(function(){});b.classList.add('play');});
     b.addEventListener('mouseleave',function(){if(v){v.pause();b.classList.remove('play');}});}
+  if(touch&&!still&&'IntersectionObserver' in window){b._src='../ad/media/'+it[0]+'.mp4';tio.observe(b);}
   b.onclick=function(){open_(it)};return b;});
 function layout(){wall.innerHTML='';var gv=document.createElement('div');gv.className='grid gv';var gh=document.createElement('div');gh.className='grid gh';
   items.forEach(function(b){if(cur!=='all'&&b.dataset.c!==cur)return;(b.dataset.s==='v'?gv:gh).appendChild(b);});
@@ -264,5 +274,10 @@ document.querySelectorAll('.shot').forEach(function(b){b.onclick=function(){ovb.
   bs.forEach(function(b){io.observe(b)});})();
 </script>
 
+<script type="module">
+import {loadDefaultJapaneseParser} from 'https://cdn.jsdelivr.net/npm/budoux@0.7.0/+esm';
+var bp=loadDefaultJapaneseParser();
+document.querySelectorAll('h1,h2,.lead,.strap,.plan .ds,.mk,.now,.per,.note,.st span,.evlinks,.cta p,.msg-copy,.msg-t,.msg-name span').forEach(function(el){bp.applyToElement(el);});
+</script>
 </body>
 </html>
