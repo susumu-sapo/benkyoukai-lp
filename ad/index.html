@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>すすむ｜AI広告動画の制作</title>
+<meta name="description" content="商品写真から、TikTok・インスタ・YouTube向けの広告動画をAIでつくります。">
+<style>
+:root{--bg:#ffffff;--soft:#f3f6fb;--ink:#14161c;--sub:#5d6573;--line:#e3e8f0;--blue:#1f5eff;--pink:#ec4a86;--yel:#ffe36b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;line-height:1.7}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.strap{background:linear-gradient(90deg,#f0538e,#e8457d);color:#fff;text-align:center;font-size:14px;font-weight:700;padding:8px 12px}
+.strap span{background:#fff;color:#e8457d;border-radius:999px;padding:1px 10px;margin-right:8px;font-size:12px}
+.strap b{color:var(--yel)}
+header{text-align:center;padding:42px 0 10px}
+.brand{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.12em;color:var(--blue)}
+h1{font-size:clamp(30px,5vw,54px);line-height:1.25;margin:10px 0 12px;font-weight:900}
+h1 em{font-style:normal;color:var(--blue);background:linear-gradient(transparent 68%,var(--yel) 68%)}
+.lead{color:var(--sub);margin:0;font-size:16px}
+.label{text-align:center;font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--blue);margin:0 0 6px}
+h2{text-align:center;font-size:clamp(24px,3.4vw,34px);line-height:1.35;margin:0 0 22px;font-weight:900}
+h2 em{font-style:normal;background:linear-gradient(transparent 65%,var(--yel) 65%)}
+#price{padding:34px 0 10px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:18px;max-width:980px;margin:0 auto}
+.plan{background:#fff;border:2px solid var(--blue);border-radius:18px;padding:22px 22px 20px;box-shadow:0 10px 30px rgba(31,94,255,.10);text-align:center}
+.plan .nm{display:inline-block;background:var(--blue);color:#fff;font-weight:800;border-radius:999px;padding:4px 16px;font-size:15px}
+.plan .ds{color:var(--sub);font-size:14px;margin:10px 0 14px}
+.mk{background:#fff4f7;border:1px dashed #f3a9c2;border-radius:12px;padding:12px 12px;font-size:14px;font-weight:700;color:#4a5160}
+.mk b{display:block;font-size:clamp(24px,3vw,30px);font-weight:900;color:#2a2f3a;line-height:1.3;margin-top:2px}
+.arrow{font-size:30px;color:var(--pink);line-height:1;margin:10px 0 6px}
+.now{font-size:14px;font-weight:800;color:var(--ink)}
+.badge{display:inline-block;background:var(--pink);color:#fff;font-size:12px;font-weight:800;border-radius:6px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.yen{font-size:clamp(28px,3.6vw,40px);font-weight:900;color:var(--blue);line-height:1.15;margin:4px 0}
+.yen small{font-size:.5em;margin-left:2px}
+.yen .nw{white-space:nowrap}
+.yen .sep{color:var(--line);margin:0 6px;font-weight:400}
+.per{font-size:13px;font-weight:700;color:var(--pink)}
+.note{text-align:center;font-size:12.5px;color:var(--sub);margin:14px 0 0}
+#works{padding:44px 0 8px;background:var(--soft);margin-top:34px}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 18px}
+.chips button{font:inherit;font-size:14px;font-weight:700;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 18px;cursor:pointer}
+.chips button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.wall{padding:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:12px}
+.gv .it{aspect-ratio:9/16}.gh .it{aspect-ratio:16/9}
+.it{margin:0;position:relative;border-radius:14px;overflow:hidden;background:#0d0f14;cursor:pointer;display:block;width:100%;border:0;padding:0;box-shadow:0 6px 18px rgba(20,22,28,.12);transition:transform .15s}
+.it:hover{transform:translateY(-3px)}
+.it video,.it img{width:100%;height:100%;object-fit:cover;display:block}
+.it .lb{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;font-size:13px;line-height:1.4;text-align:left;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75));opacity:0;transition:opacity .2s}
+.it:hover .lb,.it:focus .lb{opacity:1}
+.it .no{position:absolute;top:8px;left:8px;z-index:1;background:var(--yel);color:#111;font-weight:800;font-size:13px;line-height:1;border-radius:6px;padding:4px 7px}
+.cta{text-align:center;padding:50px 0 60px}
+.cta p{font-size:17px;font-weight:800;margin:0 0 18px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:800;font-size:18px;border-radius:999px;padding:16px 18px 16px 30px;box-shadow:0 10px 24px rgba(236,74,134,.28)}
+.btn i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#fff;font-size:16px}
+.btn.mail{background:var(--pink)}.btn.mail i{color:var(--pink)}
+.btn.line{background:#06c755;box-shadow:0 10px 24px rgba(6,199,85,.25)}.btn.line i{color:#06c755}
+footer{border-top:1px solid var(--line);color:var(--sub);font-size:13px;text-align:center;padding:18px 0 28px}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:20}
+#ov.on{display:flex}
+#ov video{max-width:94vw;max-height:88vh;border-radius:8px;background:#000}
+#ov .x{position:fixed;top:8px;right:14px;font-size:38px;line-height:1;background:none;border:0;color:#fff;cursor:pointer;z-index:2}
+#ov .t{position:fixed;bottom:12px;left:0;right:0;text-align:center;font-size:14px;color:#ddd}
+@media (hover:none){.it .lb{opacity:1}}
+@media (max-width:900px){.gv{grid-template-columns:repeat(3,1fr)}.gh{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.grid{gap:8px}.it .no{font-size:11px;padding:3px 5px}.it .lb{display:none}.btn{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="strap"><span>初回限定</span>UGC広告は、はじめてのお客様に限り <b>1本3万円〜</b> でお試しいただけます</div>
+
+<header><div class="wrap">
+<div class="brand">すすむ</div>
+<h1>商品写真から、<br><em>広告動画</em>をつくります。</h1>
+<p class="lead">TikTok・インスタ・YouTube向けの広告動画を、撮影なしでAIでつくります。</p>
+</div></header>
+
+<section id="price"><div class="wrap">
+<p class="label">≫ PRICE ≪</p>
+<h2>制作会社の相場より、<em>ずっと手軽に。</em></h2>
+<div class="plans">
+<div class="plan">
+<span class="nm">UGC広告</span>
+<p class="ds">SNSでよく見る「使ってみた」形の縦型広告。人物も声もAIで作れます。</p>
+<div class="mk">一般的な相場（SNS・ショート動画）<b>1本 5〜30万円</b></div>
+<div class="arrow">▼</div>
+<div class="now">すすむなら<span class="badge">初回限定</span></div>
+<div class="yen"><span class="nw">1本 3万円<small>〜</small></span><span class="sep">|</span><span class="nw">3本 5万円<small>〜</small></span></div>
+<div class="per">3本なら1本あたり約1.7万円〜</div>
+</div>
+<div class="plan">
+<span class="nm">CM・プロモーション動画</span>
+<p class="ds">商品CM・3D・予告編風・サービスの紹介など、商品や世界観を映像で見せる動画です。</p>
+<div class="mk">一般的な相場（SNS動画広告の制作）<b>1本 20〜70万円</b></div>
+<div class="arrow">▼</div>
+<div class="now">すすむなら</div>
+<div class="yen"><span class="nw">1本 8万円<small>〜</small></span></div>
+<div class="per">&nbsp;</div>
+</div>
+</div>
+<p class="note">※料金は動画の長さと内容によって変わります。都度お見積りします。</p>
+</div></section>
+
+<section id="works"><div class="wrap">
+<p class="label">≫ WORKS ≪</p>
+<h2>撮影ゼロで、<em>ここまで作れます。</em></h2>
+<div class="chips" id="chips"></div>
+<div class="wall" id="wall"></div>
+</div></section>
+
+<div class="cta"><div class="wrap">
+<p id="applyMsg">お申し込みは、メールでもLINEでも結構です。</p>
+<div class="btns">
+<a class="btn mail" href="mailto:ai.smart.lab06@gmail.com?subject=%E5%BA%83%E5%91%8A%E5%8B%95%E7%94%BB%E3%81%AE%E3%81%8A%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF">メールで申し込む<i>→</i></a>
+<a class="btn line" href="#" id="apply">LINEで申し込む<i>→</i></a>
+</div>
+</div></div>
+
+<footer>すすむ</footer>
+
+<div id="ov" role="dialog" aria-modal="true"><button class="x" aria-label="閉じる">×</button><div id="ovb"></div><div class="t"></div></div>
+
+<script>
+// [id, カテゴリー, 名前, 形（v=縦 h=横）]。縦を先に、横をあとに並べる。番号もこの順
+var V=[
+["u1","ugc","ドレス（開封して試着）","v"],["u2","ugc","口紅（大きな商品で目を引く）","v"],["u3","ugc","タンブラー（使ってみた感想）","v"],["n33","ugc","パズルアプリ（ピンク髪の女性）","v"],["n35","ugc","パズルアプリ（パーカーの女性）","v"],
+["c12","cm","ミスト化粧水","v"],["u5","ugc","からあげ（TikTokショップ）","v"],["p7","cm","AIでCMに変わる広告","v"],["u9","ugc","リップ（開封して色を見せる）","v"],["c8","ugc","ヘッドホン（開封して使う）","v"],
+["p1","cm","講座のPR","h"],["n40","cm","AI動画プロンプトの解説","h"],["l3","cm","Claude Code 入門","h"],["n39","cm","モーショングラフィックス","h"],["n7","cm","ジュエリー（名画の世界観）","h"],
+["c3","cm","食品CM集（ワイン・チョコ・いちご）","h"],["c1","cm","化粧水（ボトル）","h"],["n3","cm","ドリンクのCM集","h"],["n6","cm","コスメ・香水ほかのCM集","h"],["n5","cm","ガジェットのCM集（時計・マウスほか）","h"]
+];
+var C=[["all","すべて"],["ugc","UGC広告"],["cm","CM・プロモーション"]];
+var wall=document.getElementById('wall'),chips=document.getElementById('chips'),cur='all';
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+  if(e.isIntersecting){v.play().catch(function(){})}else{v.pause()}})},{rootMargin:'100px'}):null;
+var items=V.map(function(it,k){var b=document.createElement('button');b.type='button';b.className='it';b.dataset.c=it[1];b.dataset.s=it[3];
+  var no=('0'+(k+1)).slice(-2);it.no=no;
+  var v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;v.preload='none';v.poster='media/'+it[0]+'.jpg';v.src='media/'+it[0]+'.mp4';
+  v.setAttribute('muted','');v.setAttribute('playsinline','');
+  // 始まりが暗い動画が黒く見えないよう、壁では毎回長さの3割の所から流す
+  v.addEventListener('loadedmetadata',function(){v._st=v.duration*0.3;v.currentTime=v._st;});
+  v.addEventListener('timeupdate',function(){if(v._st&&v.currentTime<v._st-0.5)v.currentTime=v._st;});
+  var n=document.createElement('span');n.className='no';n.textContent=no;b.appendChild(n);b.appendChild(v);if(io)io.observe(v);
+  var l=document.createElement('span');l.className='lb';l.textContent=it[2];b.appendChild(l);
+  b.onclick=function(){open_(it)};return b;});
+// 縦の動画は縦だけの段、横の動画は横だけの段に並べる
+function layout(){wall.innerHTML='';var gv=document.createElement('div');gv.className='grid gv';var gh=document.createElement('div');gh.className='grid gh';
+  items.forEach(function(b){if(cur!=='all'&&b.dataset.c!==cur)return;(b.dataset.s==='v'?gv:gh).appendChild(b);});
+  if(gv.children.length)wall.appendChild(gv);if(gh.children.length)wall.appendChild(gh);}
+// 動画が1本もないカテゴリーのボタンは出さない
+C=C.filter(function(c){return c[0]==='all'||V.some(function(it){return it[1]===c[0];});});
+C.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.textContent=c[1];if(!i)b.className='on';
+  b.onclick=function(){chips.querySelectorAll('button').forEach(function(x){x.className=''});b.className='on';cur=c[0];layout();};
+  chips.appendChild(b);});
+layout();
+// URLの最後が #ugc などなら、そのカテゴリーを選んだ状態で開く
+function byHash(){var h=location.hash.slice(1);C.forEach(function(c,i){if(c[0]===h)chips.children[i].click();});}
+byHash();window.addEventListener('hashchange',byHash);
+var ov=document.getElementById('ov'),ovb=document.getElementById('ovb'),t=ov.querySelector('.t');
+function open_(it){ovb.innerHTML='<video controls playsinline src="media/'+it[0]+'.mp4"></video>';var v=ovb.querySelector('video');v.play().catch(function(){});
+  t.textContent=it.no+'　'+it[2];ov.classList.add('on');}
+function close_(){ovb.innerHTML='';ov.classList.remove('on');}
+ov.querySelector('.x').onclick=close_;
+ov.onclick=function(e){if(e.target===ov)close_();};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close_();});
+// LINEのフォームURLが入るまでは、LINEボタンを隠してメールだけの案内にする
+(function(){var a=document.getElementById('apply');if(a&&a.getAttribute('href')==='#'){a.style.display='none';document.getElementById('applyMsg').textContent='お申し込みは、メールで受け付けています。';}})();
+</script>
+</body>
+</html>
